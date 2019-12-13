@@ -1,0 +1,23 @@
+server:
+  port: 8888 #项目端口
+  servlet:
+    context-path: /bilibili #项目名称（上下文）
+spring:
+  thymeleaf:
+    mode: HTML # Template mode to be applied to templates. See also Thymeleaf's TemplateMode enum.
+    prefix: classpath:/templates/ # Prefix that gets prepended to view names when building a URL.
+    suffix: .html # Suffix that gets appended to view names when building a URL.
+  devtools:
+    livereload:
+      enabled: true
+  resources:
+    static-locations: classpath:/static/
+#    datasource:
+#      url: jdbc:mysql://127.0.0.1:3306/grace
+#      username: root
+#      password: root
+#      driver-class-name: com.mysql.cj.jdbc.Driver
+#      tomcat:
+#        max-wait: 10000
+#        max-active: 50
+#        test-on-borrow: true

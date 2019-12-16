@@ -1,17 +1,17 @@
 server:
   port: 8888 #项目端口
   servlet:
-    context-path: /bilibili #项目名称（上下文）
+    context-path: / #项目名称（上下文）
 spring:
   thymeleaf:
+    cache: false
+    encoding: utf-8
     mode: HTML # Template mode to be applied to templates. See also Thymeleaf's TemplateMode enum.
     prefix: classpath:/templates/ # Prefix that gets prepended to view names when building a URL.
     suffix: .html # Suffix that gets appended to view names when building a URL.
   devtools:
     livereload:
       enabled: true
-  resources:
-    static-locations: classpath:/static/
 #    datasource:
 #      url: jdbc:mysql://127.0.0.1:3306/grace
 #      username: root
@@ -21,3 +21,10 @@ spring:
 #        max-wait: 10000
 #        max-active: 50
 #        test-on-borrow: true
+logging:
+  level:
+    root: INFO #日志级别：trace<debugger<info<warn<error<fatal (springboot 默认info级别)
+  file:
+    path: /Users/liuyuxuan/IdeaProjects/log #日志存储路径
+    max-history: 3 #日志文件保存时间
+    max-size: 2000 #日志文件最大容量

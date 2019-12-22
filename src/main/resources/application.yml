@@ -2,6 +2,8 @@ server:
   port: 8888 #项目端口
   servlet:
     context-path: / #项目名称（上下文）
+#    session:
+#      timeout: 30m #session的生命周期
 spring:
   thymeleaf:
     cache: false
@@ -12,15 +14,32 @@ spring:
   devtools:
     livereload:
       enabled: true
-#    datasource:
-#      url: jdbc:mysql://127.0.0.1:3306/grace
-#      username: root
-#      password: root
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#      tomcat:
-#        max-wait: 10000
-#        max-active: 50
-#        test-on-borrow: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    name: ownDataSource
+    url: jdbc:mysql://127.0.0.1:3306/bilibili
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 1
+      max-active: 20
+    tomcat:
+      max-wait: 10000
+      max-active: 50
+      test-on-borrow: true
+  #应用配置
+  application:
+    name: bilibili
+  main:
+    allow-bean-definition-overriding: true #springboot默认false，不支持相同的bean被覆盖
+#mybatis-plus自动生成代码的配置
+mybatis-plus:
+  type-aliases-package: org.ruaho.entity
+  type-enums-package: org.ruaho.entity.enums
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.extension.handlers.MybatisEnumTypeHandler #枚举数据转换
+#日志配置
 logging:
   level:
     root: INFO #日志级别：trace<debugger<info<warn<error<fatal (springboot 默认info级别)

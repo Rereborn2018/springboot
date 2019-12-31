@@ -24,8 +24,8 @@ import java.util.Map;
 
 @Slf4j
 public class MyGenerator {
-    private String root; //项目的根路径，这个是自动获取的。不用填写值。
-    private String author="sjhh";  //代码注释中的作者
+    private String root="/Users/liuyuxuan/IdeaProjects/bilibili"; //项目的根路径，这个是自动获取的。不用填写值。
+    private String author="liuyuxuan";  //代码注释中的作者
     private String url="jdbc:mysql://localhost:3306/bilibili?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai";
     private String username="root";
     private String password="root";
@@ -117,7 +117,7 @@ public class MyGenerator {
         strategy.setControllerMappingHyphenStyle(false); //设置controller映射联字符
         strategy.setRestControllerStyle(false); //是否生成rest控制器
         strategy.setInclude(scaner()); // 需要包含的表名，允许正则表达式（与exclude二选一配置）
-        strategy.setSuperEntityClass("cn.tcampus.util.entity.BaseEntity");// 自定义继承的Entity类全称，带包名
+//        strategy.setSuperEntityClass("cn.tcampus.util.entity.BaseEntity");// 自定义继承的Entity类全称，带包名
         //自定义基础的Entity类，公共字段
         strategy.setSuperEntityColumns("updatedTime","createdTime","deleted");
         strategy.setEntityBuilderModel(true);//【实体】是否为构建者模型（默认 false,每个setter放回当前对象。

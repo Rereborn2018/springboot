@@ -742,7 +742,7 @@ header {
   display: block;
   width: 259px;
   height: 172px;
-  background: url(../images/app-qrcode.png) no-repeat center 32px;
+  background: url(../images/qrcode-app.png) no-repeat center 32px;
 }
 .user-post__hover {
   overflow: hidden;
@@ -790,7 +790,7 @@ header {
 }
 #header_logo {
   position: absolute;
-  left: 24px;
+  left: -350px;
   top: 14px;
   width: 220px;
   height: 115px;

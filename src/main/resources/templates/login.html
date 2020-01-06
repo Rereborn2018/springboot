@@ -17,6 +17,7 @@
 </script>
 <script type="text/javascript" th:src="@{/js/sea.js}" id="seajsnode"></script>
 <script type="text/javascript" th:src="@{/js/sea.config.js}"> </script>
+
 </head>
 <body>
     		<div class="z_top_container">
@@ -106,7 +107,7 @@
     <div class="header">
         <div class="lin">
             <div class="tit">
-                <img src="picture/t2.png" alt="登录" />
+                <img th:src="@{/picture/t2.png}" alt="登录" />
             </div>
         </div>
         <div class="content-bd" status="available">
@@ -114,9 +115,12 @@
                 <div class="inner">
                     <div class="qrcode" id="login-qrcode"></div>
                     <p class="qr-title">扫描二维码登录</p>
-                    <p class="qr-text"></p>
-                    <img class="bg" src="picture/2233login.png" alt="">
-                    <img src="picture/qr-tips.png" id="qr-tips">
+                    <p class="qr-text">
+						请使用
+						<a href="http://app.bilibili.com/" id="app-link" target="_blank">哔哩哔哩客户端</a>
+					</p>
+                    <img class="bg" th:src="@{/picture/2233login.png}" alt="">
+                    <img th:src="@{/picture/qr-tips.png}" id="qr-tips">
                     <div id="tv"></div>
                     <div id="qr-reload">
                         <div class="reload-btn">点击刷新</div>

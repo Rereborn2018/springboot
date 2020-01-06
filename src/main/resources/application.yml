@@ -2,14 +2,8 @@ server:
   port: 8888 #项目端口
   servlet:
     context-path: / #项目名称（上下文）
-#  ssl: #SSL配置
-#    enabled: true
-#    key-store: tomcat.keystore
-#    key-store-password: 123456
-#    key-alias: myAlias
 #    session:
 #      timeout: 30m #session的生命周期
-
 spring:
   thymeleaf:
     cache: false
